@@ -22,29 +22,28 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}              # [not win]
-    - {{ compiler('m2w64_c') }}        # [win]
-    - {{ compiler('cxx') }}            # [not win]
-    - {{ compiler('m2w64_cxx') }}      # [win]
-    - {{ posix }}filesystem        # [win]
-    - {{ posix }}sed               # [win]
-    - {{ posix }}grep              # [win]
+    - {{ compiler('c') }}            # [not win]
+    - {{ compiler('m2w64_c') }}      # [win]
+    - {{ compiler('cxx') }}          # [not win]
+    - {{ compiler('m2w64_cxx') }}    # [win]
+    - {{ posix }}filesystem          # [win]
+    - {{ posix }}sed                 # [win]
+    - {{ posix }}grep                # [win]
     - {{ posix }}autoconf
-    - {{ posix }}automake          # [not win]
-    - {{ posix }}automake-wrapper  # [win]
+    - {{ posix }}automake            # [not win]
+    - {{ posix }}automake-wrapper    # [win]
     - {{ posix }}pkg-config
     - {{ posix }}make
-    - {{ posix }}coreutils         # [win]
-    - {{ posix }}zip               # [win]
+    - {{ posix }}coreutils           # [win]
+    - {{ posix }}zip                 # [win]
     - {{ cdt('mesa-libgl-devel') }}  # [linux]
     - {{ cdt('mesa-dri-drivers') }}  # [linux]
-    - {{ cdt('libselinux') }}  # [linux]
-    - {{ cdt('libxdamage') }}  # [linux]
-    - {{ cdt('libxxf86vm') }}  # [linux]
+    - {{ cdt('libselinux') }}        # [linux]
+    - {{ cdt('libxdamage') }}        # [linux]
+    - {{ cdt('libxxf86vm') }}        # [linux]
     - xorg-libxfixes  # [linux]
   host:
     - r-base
-    - r-rcpp >=0.11.5
     - r-downloader
     - r-igraph
     - r-jpeg
@@ -52,13 +51,14 @@ requirements:
     - r-png
     - r-purrr
     - r-readbitmap
+    - r-rcpp >=0.11.5
     - r-stringr
     - libtiff
+    - fftw =3
     - xorg-libx11  # [linux]
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
-    - r-rcpp >=0.11.5
     - r-downloader
     - r-igraph
     - r-jpeg
@@ -66,6 +66,7 @@ requirements:
     - r-png
     - r-purrr
     - r-readbitmap
+    - r-rcpp >=0.11.5
     - r-stringr
     - xorg-libx11  # [linux]
 
@@ -75,7 +76,9 @@ test:
     - "\"%R%\" -e \"library('imager')\""  # [win]
 
 about:
-  home: http://dahtah.github.io/imager, https://github.com/dahtah/imager
+  home: https://dahtah.github.io/imager
+  dev_url: https://github.com/dahtah/imager
+  doc_url: https://dahtah.github.io/imager/imager.html
   license: LGPL-3.0-only
   summary: Fast image processing for images in up to 4 dimensions (two spatial dimensions, one time/depth dimension, one colour dimension). Provides most traditional image processing tools (filtering, morphology, transformations, etc.) as well as various functions for easily analysing image data using R. The package wraps
     'CImg', <http://cimg.eu>, a simple, modern C++ library for image processing.
@@ -86,27 +89,3 @@ about:
 extra:
   recipe-maintainers:
     - conda-forge/r
-
-# Package: imager
-# Type: Package
-# Title: Image Processing Library Based on 'CImg'
-# Version: 0.42.3
-# Author: Simon Barthelme [aut], David Tschumperle [ctb], Jan Wijffels [ctb], Haz Edine Assemlal [ctb], Shota Ochi [cre]
-# Authors@R: c(person("Simon","Barthelme",email="simon.barthelme@gipsa-lab.fr",role=c("aut")), person("David","Tschumperle",role=c("ctb")), person("Jan","Wijffels",role=c("ctb")), person("Haz Edine","Assemlal",role=c("ctb")), person("Shota","Ochi",email="shotaochi1990@gmail.com",role=c("cre")))
-# Maintainer: Shota Ochi <shotaochi1990@gmail.com>
-# Description: Fast image processing for images in up to 4 dimensions (two spatial dimensions, one time/depth dimension, one colour dimension). Provides most traditional image processing tools (filtering, morphology, transformations, etc.) as well as various functions for easily analysing image data using R. The package wraps 'CImg', <http://cimg.eu>, a simple, modern C++ library for image processing.
-# License: LGPL-3
-# Imports: Rcpp (>= 0.11.5),methods,stringr,png,jpeg,readbitmap,grDevices,purrr,downloader,igraph
-# Depends: R (>= 2.10.0),magrittr
-# URL: http://dahtah.github.io/imager, https://github.com/dahtah/imager
-# BugReports: https://github.com/dahtah/imager/issues
-# SystemRequirements: fftw3,libtiff,C++11
-# LinkingTo: Rcpp
-# LazyData: true
-# RoxygenNote: 7.1.0
-# Suggests: knitr, rmarkdown,ggplot2,dplyr,scales, testthat,OpenMPController,raster,spatstat, magick,Cairo
-# VignetteBuilder: knitr
-# NeedsCompilation: yes
-# Packaged: 2020-05-10 00:45:00 UTC; root
-# Repository: CRAN
-# Date/Publication: 2020-05-11 16:40:06 UTC
