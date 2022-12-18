@@ -1,4 +1,4 @@
-{% set version = "0.42.14" %}
+{% set version = "0.42.15" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/imager_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/imager/imager_{{ version }}.tar.gz
-  sha256: 6b66c413da1ea13909cf8abffc5fcecfb79a431d3bae2bcb7e24b0bcead054ed
+  sha256: de1cd04a974d9b9bc021b8cb45bf3cf904665b184f3c8b6020aa21c8284e2199
 
 build:
   merge_build_host: true  # [win]
@@ -72,7 +72,7 @@ requirements:
 
 test:
   commands:
-    - 'LD_LIBRARY_PATH="${BUILD_PREFIX}/x86_64-conda-linux-gnu/sysroot/usr/lib64:${BUILD_PREFIX}/lib" $R -e "library(''imager'')"'  # [not win]
+    - LD_LIBRARY_PATH="${BUILD_PREFIX}/x86_64-conda-linux-gnu/sysroot/usr/lib64: ${BUILD_PREFIX}/lib" $R -e "library('imager')"  # [not win]
     - "\"%R%\" -e \"library('imager')\""  # [win]
 
 about:
