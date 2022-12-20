@@ -1,4 +1,4 @@
-{% set version = "0.42.15" %}
+{% set version = "0.42.16" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/imager_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/imager/imager_{{ version }}.tar.gz
-  sha256: de1cd04a974d9b9bc021b8cb45bf3cf904665b184f3c8b6020aa21c8284e2199
+  sha256: acb0e42070abcaa453a0243f1ad6490c528b131eb232fdd700d7aa0e00d80203
 
 build:
   merge_build_host: true  # [win]
