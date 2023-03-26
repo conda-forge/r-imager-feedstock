@@ -1,11 +1,11 @@
-About r-imager
-==============
+About r-imager-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-imager-feedstock/blob/main/LICENSE.txt)
 
 Home: https://dahtah.github.io/imager
 
 Package license: LGPL-3.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-imager-feedstock/blob/main/LICENSE.txt)
 
 Summary: Fast image processing for images in up to 4 dimensions (two spatial dimensions, one time/depth dimension, one colour dimension). Provides most traditional image processing tools (filtering, morphology, transformations, etc.) as well as various functions for easily analysing image data using R. The package wraps 'CImg', <http://cimg.eu>, a simple, modern C++ library for image processing.
 
