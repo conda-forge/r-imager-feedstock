@@ -1,4 +1,4 @@
-{% set version = "1.0.2" %}
+{% set version = "1.0.3" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,11 +9,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/imager_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/imager/imager_{{ version }}.tar.gz
-  sha256: 7c849086cb17d6c5aefc106217363e14afbcda2a9e0120687d40805b5e1c566a
+  sha256: a350b999a5fa39d7b7bb2472dfa66227b658bcb23f565ec674d7503dbf05e200
 
 build:
   skip: true  # [not linux]
-  number: 1
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
