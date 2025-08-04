@@ -20,30 +20,31 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}            # [not win]
-    - {{ stdlib("c") }}              # [not win]
-    - {{ compiler('m2w64_c') }}      # [win]
-    - {{ stdlib("c") }}              # [win]
-    - {{ compiler('cxx') }}          # [not win]
-    - {{ compiler('m2w64_cxx') }}    # [win]
-    - {{ posix }}filesystem          # [win]
-    - {{ posix }}sed                 # [win]
-    - {{ posix }}grep                # [win]
+    - {{ compiler('c') }}                # [not win]
+    - {{ stdlib("c") }}                  # [not win]
+    - {{ compiler('m2w64_c') }}          # [win]
+    - {{ stdlib("c") }}                  # [win]
+    - {{ compiler('cxx') }}              # [not win]
+    - {{ compiler('m2w64_cxx') }}        # [win]
+    - {{ posix }}filesystem              # [win]
+    - {{ posix }}sed                     # [win]
+    - {{ posix }}grep                    # [win]
     - {{ posix }}autoconf
-    - {{ posix }}automake            # [not win]
-    - {{ posix }}automake-wrapper    # [win]
+    - {{ posix }}automake                # [not win]
+    - {{ posix }}automake-wrapper        # [win]
     - pkg-config
     - {{ posix }}make
-    - {{ posix }}coreutils           # [win]
-    - {{ posix }}zip                 # [win]
-    - {{ cdt('mesa-libgl-devel') }}  # [linux]
-    - {{ cdt('mesa-dri-drivers') }}  # [linux]
-    - {{ cdt('libselinux') }}        # [linux]
-    - {{ cdt('libxdamage') }}        # [linux]
-    - {{ cdt('libxxf86vm') }}        # [linux]
+    - {{ posix }}coreutils               # [win]
+    - {{ posix }}zip                     # [win]
+    - {{ cdt('mesa-libgl-devel') }}      # [linux]
+    - {{ cdt('mesa-dri-drivers') }}      # [linux]
+    - {{ cdt('libselinux') }}            # [linux]
+    - {{ cdt('libxdamage') }}            # [linux]
+    - {{ cdt('libxxf86vm') }}            # [linux]
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
     - {{ cdt('libx11-devel') }}          # [linux]
-    - xorg-libxfixes  # [linux]
+    - xorg-libxfixes                     # [linux]
+    - libgomp                            # [linux]
   host:
     - r-base
     - r-downloader
